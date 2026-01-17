@@ -7,8 +7,8 @@ export function getImagesByQuery(query) {
     params: {
       key: API_KEY,
       q: query,
-      image_type: photo,
-      orientation: horizontal,
+      image_type: 'photo',
+      orientation: 'horizontal',
       safesearch: true,
     },
   });

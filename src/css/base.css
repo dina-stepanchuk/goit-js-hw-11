@@ -90,3 +90,67 @@ main:has(.back-link) {
   width: 48px;
   height: 48px;
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 24px;
+  margin: 0 auto;
+  list-style: none;
+  max-width: 1200px;
+}
+
+.gallery-item {
+  width: 360px;
+  background: #fff;
+  border: 1px solid #808080;
+  overflow: hidden;
+}
+
+.gallery a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  padding: 12px 8px;
+  margin: 0;
+  list-style: none;
+  border-top: 1px solid #808080;
+  background-color: #ffffff;
+}
+
+.info li {
+  text-align: center;
+}
+.description {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 8px;
+  margin: 0;
+  list-style: none;
+  border-top: 1px solid #eeeeee;
+}
+.info p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #2e2f42;
+  font-weight: 400;
+}
+
+.info b {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
