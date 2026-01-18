@@ -101,6 +101,7 @@ main:has(.back-link) {
 
 .gallery-item {
   width: 360px;
+  border: 1px solid #808080;
 }
 
 @media only screen and (min-width: 768px) {
@@ -130,26 +131,20 @@ main:has(.back-link) {
 
 .description {
   display: flex;
+  justify-content: space-between;
   padding-top: 4px;
   padding-left: 20px;
   padding-right: 20px;
   margin: 0;
   list-style: none;
-  border-top: 1px solid #808080;
+  border: 1px solid #808080;
   background-color: #ffffff;
 }
 
 .description li {
   text-align: center;
 }
-.description {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 8px;
-  margin: 0;
-  list-style: none;
-  border-top: 1px solid #eeeeee;
-}
+
 .description p {
   margin: 0;
   font-size: 12px;
