@@ -39,6 +39,7 @@ body {
 main {
   flex-grow: 1;
 }
+
 main:has(.back-link) {
   text-align: center;
 }
@@ -82,11 +83,6 @@ main:has(.back-link) {
 }
 .form button:hover {
   background-color: #6c8cff;
-}
-
-.loader {
-  width: 48px;
-  height: 48px;
 }
 
 .gallery {
