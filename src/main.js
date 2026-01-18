@@ -13,14 +13,20 @@ form.addEventListener('submit', onFormSubmit);
 function onFormSubmit(event) {
   event.preventDefault();
   const query = event.target.elements['search-text'].value.trim();
-
+  if (query === '') {
+    iziToast.error({
+      message: 'Please fill in the search field',
+      position: 'topRight',
+    });
+    return;
+  }
   clearGallery();
   showLoader();
 
   setTimeout(() => {
     getImagesByQuery(query)
-      .then(response => {
-        const images = response.data.hits;
+      .then(data => {
+        const images = data.hits;
         if (images.length === 0) {
           iziToast.warning({
             message:
@@ -32,7 +38,12 @@ function onFormSubmit(event) {
         }
         createGallery(images);
       })
-      .catch(() => {})
+      .catch(error => {
+        iziToast.error({
+          message: 'Something went wrong. Please try again later',
+          position: 'topRight',
+        });
+      })
       .finally(() => {
         hideLoader();
       });
