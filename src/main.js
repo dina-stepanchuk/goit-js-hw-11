@@ -13,33 +13,28 @@ form.addEventListener('submit', onFormSubmit);
 function onFormSubmit(event) {
   event.preventDefault();
   const query = event.target.elements['search-text'].value.trim();
-  if (query === '') {
-    iziToast.error({
-      message: 'Please enter a search query!',
-      position: 'topRight',
-      color: 'red',
-    });
-    return;
-  }
+
   clearGallery();
   showLoader();
 
-  getImagesByQuery(query)
-    .then(response => {
-      const images = response.data.hits;
-      if (images.length === 0) {
-        iziToast.warning({
-          message:
-            'Sorry, there are no images matching your search query. Please try again!',
-          color: 'red',
-          position: 'topRight',
-        });
-        return;
-      }
-      createGallery(images);
-    })
-    .catch(() => {})
-    .finally(() => {
-      hideLoader();
-    });
+  setTimeout(() => {
+    getImagesByQuery(query)
+      .then(response => {
+        const images = response.data.hits;
+        if (images.length === 0) {
+          iziToast.warning({
+            message:
+              'Sorry, there are no images matching your search query. Please try again!',
+            color: 'red',
+            position: 'topRight',
+          });
+          return;
+        }
+        createGallery(images);
+      })
+      .catch(() => {})
+      .finally(() => {
+        hideLoader();
+      });
+  }, 1000);
 }
